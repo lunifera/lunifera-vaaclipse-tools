@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.semanticsoft.vaaclipse.tools.feature.ide">
+      <category name="vaaclipse-tools"/>
+   </feature>
+   <feature id="org.semanticsoft.vaaclipse.tools.feature.ide.source">
+      <category name="vaaclipse-tools"/>
+   </feature>
+   <category-def name="vaaclipse-tools" label="Vaaclipse IDE Tools"/>
+</site>

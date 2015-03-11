@@ -1,0 +1,31 @@
+visitDir() {
+  for d in *; do
+    if [ -d $d ]; then
+      (cd $d; echo "Doing $d"; rename 's/semanticsoft/lunifera/' *; visitDir)
+    fi
+    if [ -f MANIFEST.MF ]; then
+      sed -i 's/semanticsoft/lunifera/g' MANIFEST.MF;
+      echo ">>> Manifest";
+    fi 
+    if [ -f pom.xml ]; then
+      sed -i 's/semanticsoft/lunifera/g' pom.xml;
+      echo ">>> POM";
+    fi 
+    if [ -f feature.xml ]; then
+      sed -i 's/semanticsoft/lunifera/g' feature.xml;
+      echo ">>> feature.xm";
+    fi 
+    if [ -f .project ]; then
+      sed -i 's/semanticsoft/lunifera/g' .project;
+      echo ">>> .proj";
+    fi 
+    ls *.java >/dev/null 2>&1 || continue  
+    for i in *.java; do
+      sed -i 's/semanticsoft/lunifera/g' $i;
+      echo ">>> $i";
+    done 
+
+  done
+}
+
+visitDir 
